@@ -1,22 +1,33 @@
-<div class="row">
-    <div class="col-10">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>#ID</th>
-                    <th>Name</th>
-                    <th>SuperPower</th>
-                    <th>Address</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let heroes of listOfHeroes">
-                    <td>{{ heroes.id }}</td>
-                    <td>{{ heroes.name }}</td>
-                    <td>{{ heroes.superPower }}</td>
-                    <td>{{ heroes.address }}</td>
-                </tr>
-            </tbody>
-        </table>
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+            <form class="form-inline my-2">
+                <input (keyup)="onTypePhrase($event)" class="form-control mr-sm-2" type="text"
+                    placeholder="Search hero by name">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-10">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th (click)="onColumnSelect('id')" class="cursorOnHover">#ID</th>
+                        <th (click)="onColumnSelect('name')" class="cursorOnHover">Name</th>
+                        <th (click)="onColumnSelect('superPower')" class="cursorOnHover">SuperPower</th>
+                        <th (click)="onColumnSelect('address')" class="cursorOnHover">Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let heroes of listOfHeroes | filter:searchPhrase:'name' | sorter:columnKey ">
+                        <td>{{ heroes.id }}</td>
+                        <td>{{ heroes.name }}</td>
+                        <td>{{ heroes.superPower }}</td>
+                        <td>{{ heroes.address }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

@@ -7,10 +7,10 @@ import { Hero } from '../common/hero/hero';
 export class HeroService {
 
   heroesList: Hero[] = [
-    { id: 1, name: 'Batface', superPower: 'Always available', address: 'Gotham' },
+    { id: 1, name: 'Batface', superPower: 'The Leader of The Heroes', address: 'Gotham' },
     { id: 2, name: 'SuperGai', superPower: 'Vertical flight', address: 'New York' },
     { id: 3, name: 'Guardinator', superPower: 'Can drive a choppa', address: 'Los Angeles' },
-    { id: 4, name: 'DerpBoy', superPower: 'Best Apprentince', address: 'Halgard' },
+    { id: 4, name: 'DerpBoy', superPower: 'Best Apprentince', address: 'DerpTown' },
     { id: 5, name: 'Dragonborn', superPower: 'Dragon shout', address: 'Skyrim' },
   ]
 
