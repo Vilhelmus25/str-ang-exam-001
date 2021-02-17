@@ -6,7 +6,7 @@ import { Hero } from '../common/hero/hero';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(value: any[] | null, phrase: string, key: string = ''): any[] | null {
+  transform(value: any[], phrase: string, key: string = ''): any[] {
 
     if (!Array.isArray(value) || !phrase || !key) {
       return value;
